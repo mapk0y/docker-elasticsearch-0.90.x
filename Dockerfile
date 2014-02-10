@@ -9,6 +9,8 @@ RUN apt-get update
 ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get install -y wget openjdk-7-jre-headless
 
+# Announcing Deb And Rpm Repositories | Blog | Elasticsearch 
+#   http://www.elasticsearch.org/blog/apt-and-yum-repositories/
 RUN wget -O - http://packages.elasticsearch.org/GPG-KEY-elasticsearch | apt-key add -
 RUN echo "deb http://packages.elasticsearch.org/elasticsearch/0.90/debian stable main" >>/etc/apt/sources.list
 RUN apt-get update
